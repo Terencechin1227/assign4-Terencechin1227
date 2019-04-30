@@ -269,6 +269,10 @@ void draw() {
             cabbageY[i] = 1000;
             playerHealth +=1;
            }
+           if(playerHealth >4){
+            cabbageY[i] = 1000;
+            playerHealth =5;
+           }           
        }
     }
     // Soldiers
