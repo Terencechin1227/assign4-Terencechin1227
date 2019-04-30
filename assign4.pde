@@ -266,11 +266,11 @@ void draw() {
       if(playerX<cabbageX[i]+80 && playerX+80>cabbageX[i] &&
          playerY<cabbageY[i]+80 && playerY+80>cabbageY[i]){
            if(playerHealth < 5){
-            cabbageY[i] = 1000;
+            cabbageY[i] = 10000;
             playerHealth +=1;
            }
            if(playerHealth >4){
-            cabbageY[i] = 1000;
+            cabbageY[i] = 10000;
             playerHealth =5;
            }           
        }
