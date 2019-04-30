@@ -99,13 +99,6 @@ void setup() {
 	for(int i = 0; i < soilHealth.length; i++){
 		for (int j = 0; j < soilHealth[i].length; j++) {
 			 // 0: no soil, 15: soil only, 30: 1 stone, 45: 2 stones 
-      for(int f=1;f<24;f++){
-        int empty= floor(random(1,3));
-      for(int k=0;k<empty;k++){
-         int x= floor(random(0,8));
-          soilHealth[x][f] = 0;
-          }
-        }
 			soilHealth[i][j] = 15;
       if(i==j){soilHealth[i][j] = 30;}
       if(i==1 || i==2 || i==5 || i==6){if(j==8 || j==11 || j==12 || j==15) soilHealth[i][j] = 30;}
@@ -124,6 +117,13 @@ void setup() {
       }
 		}
 	}
+      for(int f=1;f<24;f++){
+        int empty= floor(random(1,3));
+      for(int k=0;k<empty;k++){
+         int x= floor(random(0,8));
+          soilHealth[x][f] = 0;
+          }
+        }
 	//soidiers
   soldierX = new float[6];
   soldierY = new float[6];
@@ -133,7 +133,6 @@ void setup() {
     soldierX[i] = col*80;
     soldierY[i] = row*80;
   }
-
 	//cabbages
   cabbageX = new float[6];
   cabbageY = new float[6];  
@@ -261,9 +260,7 @@ void draw() {
         }
 			}
 		}
-
 		// Cabbages
-		// > Remember to check if playerHealth is smaller than PLAYER_MAX_HEALTH!
     for(int i=0; i<6;i++){
       image(cabbage, cabbageX[i],cabbageY[i]);
       if(playerX<cabbageX[i]+80 && playerX+80>cabbageX[i] &&
@@ -291,7 +288,6 @@ void draw() {
        }
     }    
 		// Groundhog
-
     PImage groundhogDisplay = groundhogIdle;
     if(playerMoveTimer == 0){  
       if(playerRow<23&&soilHealth[playerCol][playerRow+1]==0){
@@ -487,13 +483,6 @@ void draw() {
 				for(int i = 0; i < soilHealth.length; i++){
 					for (int j = 0; j < soilHealth[i].length; j++) {
 						 // 0: no soil, 15: soil only, 30: 1 stone, 45: 2 stones
-        for(int f=1;f<24;f++){
-          int empty= floor(random(1,3));
-        for(int k=0;k<empty;k++){
-           int x= floor(random(0,8));
-            soilHealth[x][f] = 0;
-            }
-          }
 						soilHealth[i][j] = 15;
             if(i==j)soilHealth[i][j] = 30;
             if(i==1 || i==2 || i==5 || i==6){
@@ -516,6 +505,13 @@ void draw() {
             }
 					}
 				}
+        for(int f=1;f<24;f++){
+          int empty= floor(random(1,3));
+        for(int k=0;k<empty;k++){
+           int x= floor(random(0,8));
+            soilHealth[x][f] = 0;
+            }
+          }
             //soidiers
             soldierX = new float[6];
             soldierY = new float[6];
